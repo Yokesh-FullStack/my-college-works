@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(248, 247, 245);
+            margin: auto;
+        }
+
+        .container {
+            width: 450px;
+            margin: 40px auto;
+            padding: 25px 30px;
+            border-radius: 8px;
+            background-color: rgb(250, 232, 211);
+
+        }
+
+        input[type="submit"] {
+            background-color: #0583b9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            border-radius: 10px;
+            border-style: unset;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0db3e0;
+        }
+
+        h1 {
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body style="background-image: url(https://i.pinimg.com/736x/c1/72/5b/c1725b1255bed2b4b711029745f45b23.jpg);"
+    style="background: fixed;" style="background-image:no-repeat;">
+
+    <div class="container">
+
+        <form>
+            <center>
+                <h1 style="background-color: rgb(240, 175, 90);">Registration Form</h1>
+            </center>
+            <hr>
+            <br>
+            <h2>Fill your personal details:</h2>
+            <br>
+            <div class="form group">
+                <label for="name">Full Name</label><br>
+                <input type="text" placeholder="Enter Your Name" required>
+            </div><br>
+
+            <div class="form group">
+                <label for="email">Your Email</label><br>
+                <input type="email" placeholder="Enter Your Email" required>
+            </div> <br>
+
+            <div class="form group">
+                <label for="password">Password</label><br>
+                <input type="password" placeholder="Enter Your Password" required>
+            </div> <br>
+
+            <div class="form group">
+                <label for="phone number">Phone number</label><br>
+                <input type="NUMBER" placeholder="Enter Your Phone Number" required>
+            </div><br>
+
+            <div class="form group">
+                <label for="date of birth">Date of Birth</label><br>
+                <input type="date" placeholder="Enter Your Date of Birth" required>
+            </div>
+
+            </select><br>
+
+            <label for="Gender">Gender :</label>
+            <input type="radio" id="male" name="male " value="male">
+            <label for="Male"> Male</label>
+            <input type="radio" id="female" name="male " value="female">
+            <label for="female"> Female</label>
+            <br><br>
+
+
+            <label for="Community"> community</label>
+            <input type="radio" id="mbc" name="option" value="mbc">
+            <label for="mbc">MBC</label>
+            <input type="radio" id="bc" name="option" value="bc">
+            <label for="bc">BC</label>
+            <input type="radio" id="sc" name="option" value="sc">
+            <label for="sc">SC</label>
+            <input type="radio" id="oc" name="option" value="oc">
+            <label for="oc">OC</label>
+            <BR><br>
+
+            <br>
+
+            <label for="Department">Department</label><br>
+            <select name="department" id="department">
+                <option value="" disabled selected> Select Your Department</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="ME">MECH</option>
+                <option value="CE">CSBS</option>
+                <option value="IT">IT</option>
+                <option value="Civil">Civil</option>
+            </select>
+            <br>
+            <br>
+            <label for="year">Year</label><br>
+            <select name="year" id="year">
+                <option value="" disabled selected> Select Your Year</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+            </select><br><br>
+            <label for="college name">College Name</label><br>
+            <input type="text" placeholder="Enter Your College Name" required>
+            <br><br>
+
+
+            <label for="10th mark">10th Mark (/500)</label><br>
+            <input type="number" placeholder="enter your 10th Mark">
+            <br><br>
+
+            <label for="12th mark">12th Mark (/600)</label><br>
+            <input type="number" placeholder="enter your 12th Mark">
+            <br><br>
+            <label for="12th Cut Off">12th Cut Off (%)</label>
+            <input type="number" placeholder="enter your 12th Cut Off">
+            <br><br>
+            <label for="address">Address:</label><br>
+
+            <textarea name="address" id="address" cols="30" rows="5" placeholder="Enter Your Address"
+                required></textarea>
+            <br><br>
+
+            <input type="checkbox" id="box" name="option" value="box">
+            <label for="I agree that all the above informations are mine" style="color: red;">I agree that all the
+                above informations are mine</label>
+            <br><br>
+
+            <div class="form gorup">
+                <input type="submit" value="Register Now">
+            </div><br>
+            <hr>
+        </form>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

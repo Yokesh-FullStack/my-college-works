@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta-name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hindusthan College</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial;
+    }
+    body{
+      background:#f2f4f8;
+      color:#222;
+    }
+    header{
+      background:#0a6e58;
+      color:#fff;
+      text-align:center;
+      padding:26px;
+      font-size:30px;
+      font-weight:700;
+      letter-spacing:1px;
+    }
+    nav{
+      background:#0d806a;
+      padding:12px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:6px;
+      font-weight:600;
+      transition:0.3s;
+    }
+    nav a:hover{
+      background:#fff;
+      color:#0d806a;
+    }
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:20px;
+    }
+    .hero{
+      background:url("https://via.placeholder.com/1600x600.png?text=Hindusthan+College") center/cover no-repeat;
+      height:280px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      padding-left:20px;
+      color:#fff;
+      font-size:32px;
+      font-weight:700;
+      text-shadow:2px 2px 6px rgba(0,0,0,0.5);
+      margin-bottom:20px;
+      animation:fade 1s;
+    }
+    @keyframes fade{
+      from{opacity:0}
+      to{opacity:1}
+    }
+    h2{
+      margin:20px 0 10px;
+      color:#0a6e58;
+      font-size:26px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .card{
+      background:#fff;
+      padding:18px;
+      border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+    .card:hover{
+      transform:translateY(-5px);
+    }
+    ul li{
+      margin:6px 0;
+      padding-left:4px;
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:15px;
+      margin-top:20px;
+    }
+    .gallery img{
+      width:100%;
+      border-radius:8px;
+      height:160px;
+      object-fit:cover;
+    }
+    .form-box{
+      background:#fff;
+      padding:20px;
+      margin-top:20px;
+      border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
+    input,textarea,select,button{
+      width:100%;
+      padding:10px;
+      border-radius:6px;
+      border:1px solid #ccc;
+      margin-top:10px;
+      font-size:14px;
+    }
+    button{
+      background:#0a6e58;
+      color:#fff;
+      border:none;
+      font-weight:700;
+      cursor:pointer;
+    }
+    button:hover{
+      opacity:0.9;
+    }
+    footer{
+      background:#0d806a;
+      text-align:center;
+      padding:18px;
+      margin-top:30px;
+      color:#fff;
+      font-size:14px;
+    }
+    @media(max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:600px){
+      .hero{font-size:22px;height:180px}
+      .grid{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+
+<header>Hindusthan College</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#courses">Courses</a>
+  <a href="#dept">Departments</a>
+  <a href="#facilities">Facilities</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#students">Students</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+  <div class="hero">Welcome to Hindusthan College</div>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Hindusthan College is a premier institution known for its academic excellence, innovative learning environment and modern facilities. We prepare students for global careers through practical learning and leadership activities.</p>
+  </section>
+
+  <section id="courses">
+    <h2>Courses Offered</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>UG Courses</h3>
+        <ul>
+          <li>B.Sc Computer Science</li>
+          <li>B.Sc Mathematics</li>
+          <li>B.A English</li>
+          <li>B.Com</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>PG Courses</h3>
+        <ul>
+          <li>M.Sc Computer Science</li>
+          <li>M.Com</li>
+          <li>M.A English</li>
+          <li>MCA</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Professional Courses</h3>
+        <ul>
+          <li>BCA</li>
+          <li>BBA</li>
+          <li>Hotel Management</li>
+          <li>Fashion Designing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="dept">
+    <h2>Departments</h2>
+    <div class="grid">
+      <div class="card"><h3>Computer Science</h3><p>Advanced labs, coding clubs and research projects.</p></div>
+      <div class="card"><h3>Commerce</h3><p>Industry-focused training and accounting workshops.</p></div>
+      <div class="card"><h3>English</h3><p>Literature, communication skills and media studies.</p></div>
+    </div>
+  </section>
+
+  <section id="facilities">
+    <h2>Facilities</h2>
+    <div class="grid">
+      <div class="card"><h3>Library</h3><p>25,000+ books and digital study materials.</p></div>
+      <div class="card"><h3>Computer Labs</h3><p>High-speed systems with modern software tools.</p></div>
+      <div class="card"><h3>Sports Complex</h3><p>Indoor & outdoor sports facilities.</p></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://th.bing.com/th/id/OIP.Rwhi8jNGHRV0uZUg6H6vrgHaE8?w=222&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3">
+    
+      <img src="https://th.bing.com/th/id/OIP.T795UcSgOztGHwnwC1LVsQHaDt?w=285&h=174&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3">
+      <img src="https://th.bing.com/th/id/OIP.toKr-PZomGefYdjCxnHJpwAAAA?w=318&h=142&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3">
+      <img src="https://th.bing.com/th/id/OIP.i7IW3cdRkwHj5RB9UpI16gHaE8?w=284&h=189&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3">
+      
+    </div>
+  </section>
+
+  <section id="students">
+    <h2>Student Activities</h2>
+    <div class="grid">
+      <div class="card"><h3>Clubs</h3><p>Coding club, science club, literary club and more.</p></div>
+      <div class="card"><h3>Events</h3><p>Tech fests, cultural fest and competitions.</p></div>
+      <div class="card"><h3>Workshops</h3><p>Skill development programs and industry sessions.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="form-box">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <select>
+        <option>Select Course</option>
+        <option>B.Sc</option>
+        <option>B.Com</option>
+        <option>BCA</option>
+      </select>
+      <textarea rows="4" placeholder="Message"></textarea>
+      <button>Submit</button>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Hindusthan College • Contact: info@hindusthancollege.edu • +91 9876543210
+</footer>
+
+</body>
+</html>

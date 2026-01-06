@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Bakery - Fresh Baked Goods</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #8B4513;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        header p {
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        nav {
+            background-color: #A0522D;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23D2B48C" width="1200" height="400"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            color: #8B4513;
+            margin: 40px 0 30px 0;
+            text-decoration: underline;
+        }
+
+        .products {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-card {
+            background-color: #FFF8DC;
+            border: 3px solid #8B4513;
+            border-radius: 8px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card h3 {
+            color: #8B4513;
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+
+        .product-card p {
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 1.3em;
+            color: #D2691E;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .product-icon {
+            font-size: 3em;
+            margin: 10px 0;
+        }
+
+        .about {
+            background-color: #FFF8DC;
+            padding: 30px;
+            border-left: 5px solid #8B4513;
+            margin: 40px 0;
+            border-radius: 5px;
+        }
+
+        .about h3 {
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .about p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .contact {
+            background-color: #8B4513;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 40px 0;
+        }
+
+        .contact h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        footer {
+            background-color: #8B4513;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.9em;
+            }
+
+            .hero h2 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🍰 Sweet Bakery 🍰</h1>
+        <p>Fresh Baked Goods Made Daily</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <div>
+            <h2>Welcome to Sweet Bakery</h2>
+            <p>Premium Quality Baked Products</p>
+        </div>
+    </div>
+
+    <main>
+        <h2 class="section-title" id="menu">Our Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-icon">🍪</div>
+                <h3>Cookies</h3>
+                <p>Freshly baked chocolate chip and sugar cookies</p>
+                <div class="price">₹150 per pack</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🥐</div>
+                <h3>Croissants</h3>
+                <p>Buttery and flaky French-style croissants</p>
+                <div class="price">₹80 each</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🎂</div>
+                <h3>Cakes</h3>
+                <p>Custom cakes for all your special occasions</p>
+                <div class="price">₹300 onwards</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🍩</div>
+                <h3>Donuts</h3>
+                <p>Glazed and filled donuts in various flavors</p>
+                <div class="price">₹100 per pack</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🥖</div>
+                <h3>Bread</h3>
+                <p>Whole wheat and multigrain artisan bread</p>
+                <div class="price">₹60 per loaf</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🧁</div>
+                <h3>Cupcakes</h3>
+                <p>Fluffy cupcakes with creamy frosting</p>
+                <div class="price">₹120 per pack</div>
+            </div>
+        </div>
+
+        <section class="about" id="about">
+            <h3>About Us</h3>
+            <p>Welcome to Sweet Bakery, your destination for the finest baked goods in the city. We have been serving our community for over 10 years with a commitment to quality and freshness. Every item in our bakery is made fresh daily using the highest quality ingredients. Our skilled bakers work early mornings to ensure you get the best products for your breakfast, events, and celebrations.</p>
+        </section>
+
+        <div class="contact" id="contact">
+            <h3>Contact Us</h3>
+            <p>📍 Address: 123 Baker Street, City Center</p>
+            <p>📞 Phone: +91-9876543210</p>
+            <p>📧 Email: info@sweetbakery.com</p>
+            <p>🕒 Open: Mon-Sun, 7:00 AM - 9:00 PM</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sweet Bakery. All rights reserved.</p>
+    </footer>
+</body>
+</html>

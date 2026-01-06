@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML Features — Basic Examples</title>
+    <style>
+        :root {
+            --brand: #072b50;
+            --muted: #6b7280;
+            --accent: #ff6600
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            color: #111;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #ffffffcc;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00c6ff, #6da6eb);
+            padding: 18px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center
+        }
+
+        header h1 {
+            color: var(--brand);
+            margin: 0
+        }
+
+        nav {
+            margin-top: 20px;
+            background: rgba(252, 10, 155, 0.2);
+            padding: 10px;
+            border-radius: 25px
+        }
+
+        nav a {
+            margin: 0 8px;
+            color: white;
+            text-decoration: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px)
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap:18px;
+            margin-top: 18px
+        }
+
+        section {
+            margin-bottom: 25px;
+            background: rgb(169, 228, 250);
+            padding: 20px;
+            border-radius: 20px;
+            max-width: 1000px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease
+        }
+
+        section:hover {
+            transform: translateY(-5px)
+        }
+
+        .example {
+            background: #f8faff;
+            border: 1px solid #0d0d0d;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px
+        }
+
+        video,
+        audio {
+            max-width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse
+        }
+        .headings{
+            margin-bottom: 25px;
+            margin-right: -1;
+            background: rgb(169, 228, 250);
+            padding: 20px;
+            border-radius: 20px;
+            max-width: 1000px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease
+        }
+
+        th,
+        td {
+            border: 1px solid #e6eef7;
+            padding: 8px;
+            text-align: left
+        }
+
+        th {
+            background: #f0f6fb
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 8px;
+            border: 1px solid #dfe9f6;
+            border-radius: 4px
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none
+        }
+
+        footer {
+            margin-top: 18px;
+            text-align: center;
+            color: var(--muted)
+        }
+
+        @media (max-width:800px) {
+            main {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1>HTML Features — Basic Examples</h1>
+
+            <nav aria-label="Main navigation">
+                <a href="https://i.pinimg.com/736x/a9/ac/d9/a9acd950c0f9ce1b7ecb0c8469435d8b.jpg">Images</a>
+                <a href="https://www.youtube.com/embed/00BL4t4azJc?si=DYXlG2g-jf0s6925">Media</a>
+                <a href="#forms">Forms</a>
+                <a href="#data">Tables</a>
+            </nav>
+        </header>
+
+        <main>
+            <article>
+                <section class="headings">
+                    <h2>1. Headings &amp; Paragraphs</h2>
+                    <p>Headings define sections of a page. Use <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for
+                        hierarchy.</p>
+                    <div class="example">
+                        <h1>H1 Example</h1>
+                        <p>This is a simple paragraph to show basic text content.</p>
+                        <p><strong>Unordered list:</strong></p>
+                        <ul>
+                            <li>Item one</li>
+                            <li>Item two</li>
+                            <li>Item three</li>
+                        </ul>
+                        <p><strong>Ordered list:</strong></p>
+                        <ol>
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="images">
+                    <h2>2. Image &amp; Figure</h2>
+                    <p>Use <code>&lt;img&gt;</code> for images. Wrap with <code>&lt;figure&gt;</code> and
+                        <code>&lt;figcaption&gt;</code> for captions.
+                    </p>
+                    <div class="example">
+                        <figure>
+                            <img style="border-radius: 30px;"
+                                src="https://i.pinimg.com/736x/a9/ac/d9/a9acd950c0f9ce1b7ecb0c8469435d8b.jpg"
+                                alt="Sample placeholder">
+                            <figcaption>Figure caption: placeholder image.</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section id="media">
+                    <h2>3. Video &amp; Audio</h2>
+                    <div class="example">
+                        <p><strong>Video:</strong></p>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/00BL4t4azJc?si=DYXlG2g-jf0s6925" width="100px"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin;" allowfullscreen></iframe>
+                        <p style="margin-top:8px"><br><br><strong>Audio:</strong></p>
+                        <audio controls>
+                            <source src="audio/sample.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </section>
+
+                <section id="links">
+                    <h2>4. Hyperlinks</h2>
+                    <div class="example">
+                        <p>
+                        <h3>External link:</h3> <a
+                            href="https://i.pinimg.com/1200x/68/c9/ff/68c9fff093055937d1ab8768b7310815.jpg"
+                            target="_blank" rel="noopener"><img
+                                src="https://i.pinimg.com/1200x/68/c9/ff/68c9fff093055937d1ab8768b7310815.jpg"
+                                alt=""></a></p>
+                        <p>
+                        <h3>Anchor link:</h3> <a
+                            href="https://i.pinimg.com/1200x/00/4c/0f/004c0f7e802c11e35b0455998dfd491b.jpg"><img
+                                src="https://i.pinimg.com/1200x/00/4c/0f/004c0f7e802c11e35b0455998dfd491b.jpg"></a></p>
+                    </div>
+                </section>
+
+              
+
+                    <section id="map">
+                        <h2>5. Image Map (usecase)</h2>
+                        <div class="example">
+                            <p>Clickable areas on an image:</p>
+                            <img src="https://www.w3schools.com/html/workplace.jpg" alt="workplace" usemap="#workmap"
+                                style="max-width:100%">
+                            <map name="workmap">
+                                <area shape="rect" coords="34,44,270,350" alt="Computer"
+                                    href="https://www.flipkart.com/apple-macbook-air-intel-core-i5-5th-gen-8-gb-128-gb-ssd-mac-os-sierra-mqd32hn-a/p/itm59b02cd96984a?pid=COMEVCPQBXBDFJ8C&lid=LSTCOMEVCPQBXBDFJ8CBM9RP1&marketplace=FLIPKART&q=laptop+white+air+mac&store=6bo%2Fb5g&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=1b8141b5-aa81-41d4-a8aa-2917fb17ff6d.COMEVCPQBXBDFJ8C.SEARCH&ppt=sp&ppn=sp&ssid=ih3x31g9i80000001762530973608&qH=f374659709df0342">
+                                <area shape="rect" coords="290,172,333,250" alt="Phone"
+                                    href="https://www.flipkart.com/realme-p4-pro-5g-birch-wood-128-gb/p/itme41a54752cc21?pid=MOBHERXKZCGAA4QC&param=3328&otracker=clp_bannerads_1_24.bannerAdCard.BANNERADS_a_mobile-phones-store_PZ868SP4J8OA">
+                                <area shape="circle" coords="337,300,44" alt="Coffee"
+                                    href="https://www.flipkart.com/manorath-coffee-microwave-safe-durable-stylish-tea-cup-perfect-gift-loved-ones-ceramic-mug/p/itmebab7f1da04b0?pid=MUGH8SGWG2C7H7FF&lid=LSTMUGH8SGWG2C7H7FFMGVZ1J&marketplace=FLIPKART&q=small+cup+with+tea+with+coffee+mug&store=upp%2Fi7t%2Fmsi&srno=s_1_15&otracker=search&otracker1=search&fm=search-autosuggest&iid=f5a5a737-c380-45b5-924f-b45fba52abb1.MUGH8SGWG2C7H7FF.SEARCH&ppt=sp&ppn=sp&ssid=y90gsspx8w0000001762530715184&qH=7806cad9c019a54b">
+                            </map>
+                        </div>
+                    </section>
+
+                    <section id="forms">
+                        <h2>6. Forms &amp; Inputs</h2>
+                        <div class="example">
+                            <form action="#" method="post">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" placeholder="Your name" required>
+
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+                                <label>Choose features</label>
+                                <label><input type="checkbox" name="feat" value="images"> Images</label>
+                                <label><input type="checkbox" name="feat" value="video"> Video</label>
+
+                                <button class="btn" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </section>
+
+                    <section id="table">
+                        <h2>7. Table</h2>
+                        <div class="example">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Element</th>
+                                        <th>Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>&lt;img&gt;</td>
+                                        <td>Show images</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&lt;video&gt;</td>
+                                        <td>Embed video</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+
+
+            </article>
+        </main>
+
+        <footer>
+            <p style="text-align:center;color:var(--muted);">&copy; 2025 — HTML Features Demo. Built with semantic tags
+                and basic CSS.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

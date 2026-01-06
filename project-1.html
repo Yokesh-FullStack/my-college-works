@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Tech Event Registration</title>
+  <style>
+    :root {
+      --background-color: #1a1a2e;
+      --form-background: rgba(27, 27, 47, 0.9);
+      --text-color: #e9e4f0;
+      --primary-color: #007bff;
+      --accent-color: #e94560;
+      --border-color: #3e2c60;
+    }
+    body {
+      font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: var(--background-color);
+      background-image: url('https://i.pinimg.com/1200x/f0/49/32/f0493253184b784d95a6ecd47a84b052.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .container {
+      width: 90%;
+      max-width: 550px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      background-color: var(--form-background);
+      backdrop-filter: blur(5px);
+      border: 1px solid var(--border-color);
+    }
+    h1 {
+      text-align: center;
+      color: var(--accent-color);
+      margin-bottom: 25px;
+      font-size: 2em;
+    }
+    form label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="datetime-local"],
+    form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 16px;
+      background-color: #2b2b48;
+      color: var(--text-color);
+      transition: border-color 0.3s;
+    }
+    form input:focus,
+    form select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+    }
+    .radio-group {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background-color: #2b2b48;
+    }
+    .radio-group label {
+      display: inline-flex;
+      align-items: center;
+      margin: 5px 10px 5px 0;
+      cursor: pointer;
+      font-weight: normal;
+    }
+    .radio-group input[type="radio"] {
+      margin-right: 5px;
+      width: auto;
+      accent-color: var(--primary-color);
+    }
+    .validation-message {
+      color: var(--accent-color);
+      font-size: 0.9em;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      height: 20px;
+    }
+    form button {
+      width: 100%;
+      padding: 15px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.1s;
+    }
+    form button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 600px) {
+      .container {
+        width: 95%;
+        padding: 20px;
+      }
+      .radio-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tech Event Registration</h1>
+    <form id="registrationForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="dept">Department</label>
+      <input type="text" id="dept" name="dept" required>
+
+      <label>Year</label>
+      <div class="radio-group" id="yearGroup">
+        <label><input type="radio" name="year" value="first" required> First Year</label>
+        <label><input type="radio" name="year" value="second"> Second Year</label>
+        <label><input type="radio" name="year" value="third"> Third Year</label>
+        <label><input type="radio" name="year" value="fourth"> Fourth Year</label>
+      </div>
+
+      <label for="eventType">Event Type</label>
+      <select id="eventType" name="eventType" required>
+        <option value="" disabled selected>Select an Event</option>
+        <option value="Hackathon">Hackathon</option>
+        <option value="Webinar">Webinar</option>
+        <option value="Workshop">Workshop</option>
+        <option value="Coding Challenge">Coding Challenge</option>
+        <option value="Tech Talk">Tech Talk</option>
+        <option value="Project Expo">Project Expo</option>
+        <option value="Quiz Competition">Quiz Competition</option>
+      </select>
+
+      <label for="date">Event Date (Time Must be future)</label>
+      <input type="datetime-local" id="date" name="date" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+      <div id="passwordMessage" class="validation-message"></div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const registrationForm = document.getElementById('registrationForm');
+      const dateInput = document.getElementById('date');
+      const passwordInput = document.getElementById('password');
+      const confirmPasswordInput = document.getElementById('confirmPassword');
+      const passwordMessage = document.getElementById('passwordMessage');
+
+      function getMinDateTime() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth()+1).padStart(2,'0');
+        const day = String(now.getDate()).padStart(2,'0');
+        const hours = String(now.getHours()).padStart(2,'0');
+        const minutes = String(now.getMinutes()).padStart(2,'0');
+        return `${year}-${month}-${day}T${hours}:${minutes}`;
+      }
+      dateInput.min = getMinDateTime();
+
+      function validatePasswords() {
+        const p1 = passwordInput.value;
+        const p2 = confirmPasswordInput.value;
+        if (!p2) {
+          passwordMessage.textContent = '';
+          confirmPasswordInput.setCustomValidity('');
+          return true;
+        }
+        if (p1 === p2) {
+          passwordMessage.textContent = 'Passwords match!';
+          passwordMessage.style.color = '#4CAF50';
+          confirmPasswordInput.setCustomValidity('');
+          return true;
+        } else {
+          passwordMessage.textContent = 'Passwords do not match!';
+          passwordMessage.style.color = 'var(--accent-color)';
+          confirmPasswordInput.setCustomValidity('Passwords do not match');
+          return false;
+        }
+      }
+      passwordInput.addEventListener('keyup', validatePasswords);
+      confirmPasswordInput.addEventListener('keyup', validatePasswords);
+
+      registrationForm.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!validatePasswords()) {
+          alert('Registration failed! Please ensure passwords match.');
+          confirmPasswordInput.focus();
+          return;
+        }
+        const selectedDate = new Date(dateInput.value);
+        const now = new Date();
+        if (selectedDate < now) {
+          alert('Registration failed! Please select a future date and time for the event.');
+          return;
+        }
+        const eventTypeInput = document.getElementById('eventType');
+        const selectedEventName = eventTypeInput.options[eventTypeInput.selectedIndex].text;
+        alert(`You have successfully registered for ${selectedEventName}!
+Submission data would typically be sent to a server here.`);
+        registrationForm.reset();
+        passwordMessage.textContent = '';
+        dateInput.min = getMinDateTime();
+      });
+    });
+  </script>
+</body>
+</html>
